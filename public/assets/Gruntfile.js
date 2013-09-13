@@ -51,7 +51,7 @@ module.exports = function (grunt) {
                 files: [
                     '<%= yeoman.app %>/scripts/app/templates/*.hbs'
                 ],
-                tasks: ['handlebars']
+                tasks: ['copy:temps']
             }
         },
         connect: {
@@ -266,7 +266,6 @@ module.exports = function (grunt) {
             'createDefaultTemplate',
             'copy:comps',
             'copy:temps',
-            'handlebars',
             'connect:livereload',
             'open',
             'watch'
