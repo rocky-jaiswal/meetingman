@@ -38,15 +38,6 @@ module.exports = function (grunt) {
                 files: ['test/spec/**/*.coffee'],
                 tasks: ['coffee:test']
             },
-            livereload: {
-                options: {
-                    livereload: LIVERELOAD_PORT
-                },
-                files: [
-                    '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
-                    '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
-                ]
-            },
             handlebars: {
                 files: [
                     '<%= yeoman.app %>/scripts/app/templates/*.hbs'
@@ -255,7 +246,7 @@ module.exports = function (grunt) {
         grunt.file.write('.tmp/scripts/templates.js', 'this.JST = this.JST || {};');
     });
 
-    grunt.registerTask('server', function (target) {
+    grunt.registerTask('start', function (target) {
         if (target === 'dist') {
             return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
         }
@@ -266,8 +257,6 @@ module.exports = function (grunt) {
             'createDefaultTemplate',
             'copy:comps',
             'copy:temps',
-            'connect:livereload',
-            'open',
             'watch'
         ]);
     });

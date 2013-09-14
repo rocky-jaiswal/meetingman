@@ -4,11 +4,13 @@
 
 2. bundle exec rake db:migrate
 
-3. go to public/assets and run 'grunt server' (we don't trust asset pipelining)
+3. go to public/assets and run 'grunt start' (we don't trust asset pipelining)
 
-3. bundle exec rails s
+3a. run grunt to create prod build
 
-4. Register as a user and login
+4. bundle exec rails s
+
+5. Register as a user and login
 
 
 ##Please use Chrome for best results
